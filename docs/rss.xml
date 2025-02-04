@@ -1,2 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Meekdai.github.io/Gmeek-template</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Meekdai.github.io/Gmeek-template</link></image><lastBuildDate>Thu, 14 Mar 2024 09:17:29 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>请接着之后的安装步骤执行</title><link>https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</link><description>如果你点击了`READM.md`的链接后，看到了这个页面，请继续之后的安装步骤执行。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</guid><pubDate>Thu, 14 Mar 2024 09:15:10 +0000</pubDate></item><item><title>这是Gmeek模板仓库</title><link>https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</link><description>通过这个模板创建库，可以大大减少部署Gmeek博客的配置步骤。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</guid><pubDate>Wed, 20 Dec 2023 07:42:24 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://delbacon.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 04 Feb 2025 15:15:12 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>virtuoso学习记录1</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-1.html</link><description>cds.lib：设计库管理文件，包含一些基础设计库定义和用户自定义工程库
+.cdsinit：包含cadence的初始化信息和快捷键设置
+
+pwd：当前thermal所在文件夹
+which virtuoso：virtuoso所在文件夹
+
+在GUI用ctrl+L搜索路径
+
+virtuoso &amp;运行，&amp;是为了在运行virtuoso后仍能使用thermal
+
+
+mim：电容
+rm：电阻
+pxx：pmos
+nxx：nmos
+
+p33r5：p是pmos，33是最大承受电压
+
+快捷键：
+w：wire布线
+p：pin引脚
+q：修改参数
+i：导入元件
+f：大小自动适应
+
+
+定义GND的方法：
+1. analog库内有gnd符号
+2. L键输入gnd！，默认这条线为gnd
+
+
+仿真时要调用相关文件，一般在工艺库的models/spectre/，结尾为.scs/.lib/.l
+
+csmc的这个工艺不会自动加载，需手动添加，模型在model文件夹下s05mixdtssa01v11.scs。</description><guid isPermaLink="true">https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-1.html</guid><pubDate>Tue, 04 Feb 2025 15:14:50 +0000</pubDate></item></channel></rss>
