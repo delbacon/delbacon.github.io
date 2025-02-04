@@ -2,5 +2,7 @@
     "title":"delbacon的小窝",
     "subTitle":"芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last"，
+    "dayTheme":"light",
+    "nightTheme":"dark_colorblind"
 }
