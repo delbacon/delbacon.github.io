@@ -4,5 +4,9 @@
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
     "GMEEK_VERSION":"last",
     "dayTheme":"light",
-    "nightTheme":"dark_colorblind"
+    "nightTheme":"dark_colorblind",
+    "startSite":"02/04/2025",
+    "themeMode":"fix",
+    "dayTheme":"dark",
+    "nightTheme":"dark-blue"
 }
