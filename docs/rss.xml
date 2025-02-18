@@ -1,5 +1,123 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 04 Feb 2025 15:30:57 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 18 Feb 2025 05:33:42 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>电磁场与电磁波学习笔记——1矢量分析</title><link>https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</link><description>#数学基础/矢量，向量 #数学基础/坐标系 
+# 1.1 矢量代数
+《电磁场与电磁波》（谢处方）中用 $\vec e_A$ 表示与$\vec A$同方向的单位矢量
+
+### 矢量乘法
+1. 点乘： $\vec A\cdot \vec B=ABcos\theta$ ，服从交换律，分配律，不服从几何律（ $\vec A \cdot \vec B \cdot \vec C\neq \vec B \cdot \vec C \cdot \vec A$ ）
+2. 叉乘： $\vec A \times \vec B=\vec e_nABsin\theta，\vec e_n$ 通过右手螺旋确定，仅服从分配律（ $\vec A \times (\vec B+ \vec C)=\vec A \times \vec B+ \vec A \times \vec C$ )
+	有变换： $\vec A \times \vec B = -\vec B \times \vec A$ 
+&lt;img src='https://github.com/user-attachments/assets/cc9b5de6-ae12-4992-87e8-3dc7ef15c5af' width='200' /&gt;
+
+3. 标量三重积： $\vec A \cdot (\vec B \times \vec C)=\vec B \cdot (\vec C \times \vec A)=\vec C \cdot (\vec A \times \vec B)$ ，满足A→B→C顺序关系
+4. **矢量三重积** ： $\vec A \times (\vec B \times \vec C)=\vec B (\vec A \cdot \vec C)-\vec C (\vec A \cdot \vec B)$ ，拿出（）中的矢量，剩余量点乘，前正后负
+**注意矢量三重积的括号在后，不能换位置！**
+例：
+ $\vec A \times \vec B \times \vec C=(\vec A \times \vec B )\times \vec C=-\vec A \times (\vec B \times \vec C)$ 
+
+### 三种常用的正交曲线坐标系与拉梅系数
+#数学基础/坐标系/拉梅系数 
+##### 直角坐标系
+&lt;img src='https://github.com/user-attachments/assets/7bbac064-a030-4fdf-b2b6-7d44686bbe6e' width='300' /&gt;
+
+坐标变量变化范围： $-\infty&lt;x&lt;\infty,-\infty&lt;y&lt;\infty,-\infty&lt;z&lt;\infty$ 
+1. 拉梅系数： $h_x=1,h_y=1,h_z=1$ 
+2. 位置矢量： $\vec r = |\vec r|\vec e_r$， $\vec e_r=\vec e_xcos\alpha+\vec e_ycos\beta+\vec e_zcos\gamma$  
+3. 点乘： $\vec A \cdot \vec B =A_xB_x+A_yB_y+A_zB_z$ 
+4. 叉乘：
+ ```math
+\vec A \times \vec B=
+\begin{vmatrix}
+\vec e_x&amp;\vec e_y&amp;\vec e_z  \\
+A_x&amp; A_y&amp; A_z \\
+B_x&amp; B_y&amp; B_z
+\end{vmatrix}=\vec e_x(A_yB_z-A_zB_y)-\vec e_y(A_x B_z-A_zB_x)+\vec e_z(A_xB_y-A_yB_x)
+```
+(满足顺序x→y→z的为正，不满足为负)
+
+##### 圆柱坐标系
+
+&lt;img src='https://github.com/user-attachments/assets/5c1aeef0-215b-434c-b8c5-10e2215419b0' width='300' /&gt;
+
+坐标变量变化范围：$0\leq \rho &lt; \infty,0\leq \phi \leq 2\pi,-\infty &lt; z &lt;\infty$ ，$\phi$ 以x轴为基准
+1. 拉梅系数： $h_\rho=1,h_\phi=\rho,h_z=1$
+2. 位置矢量： $\vec r=\vec e_\rho+\vec e_zz$
+3. 注意： $\vec e_\rho,\vec e_\phi$ 是随 $\phi$ 变化的！！！（ $\vec e_\rho$ 与 $\rho$ 平面平行， $\vec e_\phi$ 与 $\rho$ 平面垂直，而 $\rho$ 平面受 $\phi$ 角影响），不同 $\rho$ 平面的矢量不能直接计算、
+4. 矢量的转化（圆柱→直角）
+```math
+\begin{matrix}
+\vec e_\rho \\
+\vec e_\phi \\
+\vec e_z \\
+\end{matrix}=\begin{matrix}
+&amp; \left( \begin{matrix}
+cos\phi\\
+-sin\phi \\
+0
+\end{matrix} \right. &amp; \left. \begin{matrix}
+sin\phi \\
+cos\phi \\
+0
+\end{matrix} \right. &amp; \left. \begin{matrix}
+0 \\
+0 \\
+1
+\end{matrix}
+\right) \\
+\end{matrix}
+\left(\begin{matrix}
+\vec e_x \\
+\vec e_y \\
+\vec e_z \\
+\end{matrix}\right)
+```
+具体推导过程：
+
+&lt;img src='https://github.com/user-attachments/assets/803a97b2-951d-4da5-92d1-564462e70446' width='300' /&gt;
+
+有 $x=\rho cos\phi,y=\rho sin\phi$ ，则 $x^2+y^2=\rho^2$ 
+  $e_\phi$ 与 $e_\rho$ 正交，有 $e_\phi \cdot e_\rho=0$ ，且 $e_\rho=ae_x+be_y$ ???疑惑，继续思考
+##### 球坐标系
+
+&lt;img src='https://github.com/user-attachments/assets/5a44a481-9d10-459e-bc72-bda15deded45' width='300' /&gt;
+
+坐标变量变化范围： $0\leq r&lt;\infty,0\leq \theta \leq \pi,\leq \phi \leq 2\pi$ ， $\theta$ 以z轴为基准， $\phi$ 以x轴为基准
+1. 拉梅系数： $h_r=1,h_\theta=r,h_\phi=rsin\theta$  
+2. 位置矢量： $\vec r = \vec e_rr$ ，$\vec e_r$ 也是变量！
+3. 矢量的转化（球→直角）：
+```math
+\begin{matrix}
+\vec e_r \\
+\vec e_\theta \\
+\vec e_\phi \\
+\end{matrix}=\begin{matrix}
+&amp; \left( \begin{matrix}
+sin\theta cos\phi\\
+cos\theta cos\phi \\
+-sin\phi
+\end{matrix} \right. &amp; \left. \begin{matrix}
+sin\theta sin\phi \\
+cos\theta sin\phi \\
+cos\phi
+\end{matrix} \right. &amp; \left. \begin{matrix}
+cos\theta \\
+-sin\theta \\
+0
+\end{matrix}
+\right) \\
+\end{matrix}
+\left(\begin{matrix}
+\vec e_x \\
+\vec e_y \\
+\vec e_z \\
+\end{matrix}\right)
+```
+##### 拉梅系数：
+用于统一各坐标系，在计算线、面积、体积元，梯度、散度、旋度等时非常便利
+对于由abc三个自由度组成的三维坐标系，有：
+1. 面积元： $dS_a=h_bh_c\mathrm{d}b\mathrm{d}c,dS_b=h_ah_c\mathrm{d}a\mathrm{d}c...$ 
+2. 体积元： $dV=h_ah_bh_c\mathrm{d}a\mathrm{d}b\mathrm{d}c$ 
+。</description><guid isPermaLink="true">https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</guid><pubDate>Tue, 18 Feb 2025 05:33:21 +0000</pubDate></item><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
 
 Connectivity→Generate→All from source
 产生的东西：
