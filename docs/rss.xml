@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 18 Feb 2025 05:33:42 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>电磁场与电磁波学习笔记——1矢量分析</title><link>https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</link><description>#数学基础/矢量，向量 #数学基础/坐标系 
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 18 Feb 2025 05:36:22 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>电磁场与电磁波学习笔记——1矢量分析</title><link>https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</link><description>#数学基础/矢量，向量 #数学基础/坐标系 
 # 1.1 矢量代数
 《电磁场与电磁波》（谢处方）中用 $\vec e_A$ 表示与$\vec A$同方向的单位矢量
 
@@ -20,7 +20,8 @@
 ##### 直角坐标系
 &lt;img src='https://github.com/user-attachments/assets/7bbac064-a030-4fdf-b2b6-7d44686bbe6e' width='300' /&gt;
 
-坐标变量变化范围： $-\infty&lt;x&lt;\infty,-\infty&lt;y&lt;\infty,-\infty&lt;z&lt;\infty$ 
+坐标变量变化范围：
+ $-\infty&lt;x&lt;\infty,-\infty&lt;y&lt;\infty,-\infty&lt;z&lt;\infty$ 
 1. 拉梅系数： $h_x=1,h_y=1,h_z=1$ 
 2. 位置矢量： $\vec r = |\vec r|\vec e_r$， $\vec e_r=\vec e_xcos\alpha+\vec e_ycos\beta+\vec e_zcos\gamma$  
 3. 点乘： $\vec A \cdot \vec B =A_xB_x+A_yB_y+A_zB_z$ 
@@ -39,7 +40,8 @@ B_x&amp; B_y&amp; B_z
 
 &lt;img src='https://github.com/user-attachments/assets/5c1aeef0-215b-434c-b8c5-10e2215419b0' width='300' /&gt;
 
-坐标变量变化范围：$0\leq \rho &lt; \infty,0\leq \phi \leq 2\pi,-\infty &lt; z &lt;\infty$ ，$\phi$ 以x轴为基准
+坐标变量变化范围：
+ $0\leq \rho &lt; \infty,0\leq \phi \leq 2\pi,-\infty &lt; z &lt;\infty$ ，$\phi$ 以x轴为基准
 1. 拉梅系数： $h_\rho=1,h_\phi=\rho,h_z=1$
 2. 位置矢量： $\vec r=\vec e_\rho+\vec e_zz$
 3. 注意： $\vec e_\rho,\vec e_\phi$ 是随 $\phi$ 变化的！！！（ $\vec e_\rho$ 与 $\rho$ 平面平行， $\vec e_\phi$ 与 $\rho$ 平面垂直，而 $\rho$ 平面受 $\phi$ 角影响），不同 $\rho$ 平面的矢量不能直接计算、
@@ -81,7 +83,8 @@ cos\phi \\
 
 &lt;img src='https://github.com/user-attachments/assets/5a44a481-9d10-459e-bc72-bda15deded45' width='300' /&gt;
 
-坐标变量变化范围： $0\leq r&lt;\infty,0\leq \theta \leq \pi,\leq \phi \leq 2\pi$ ， $\theta$ 以z轴为基准， $\phi$ 以x轴为基准
+坐标变量变化范围：
+ $0\leq r&lt;\infty,0\leq \theta \leq \pi,\leq \phi \leq 2\pi$ ， $\theta$ 以z轴为基准， $\phi$ 以x轴为基准
 1. 拉梅系数： $h_r=1,h_\theta=r,h_\phi=rsin\theta$  
 2. 位置矢量： $\vec r = \vec e_rr$ ，$\vec e_r$ 也是变量！
 3. 矢量的转化（球→直角）：
@@ -112,7 +115,7 @@ cos\theta \\
 \vec e_z \\
 \end{matrix}\right)
 ```
-##### 拉梅系数：
+##### 拉梅系数
 用于统一各坐标系，在计算线、面积、体积元，梯度、散度、旋度等时非常便利
 对于由abc三个自由度组成的三维坐标系，有：
 1. 面积元： $dS_a=h_bh_c\mathrm{d}b\mathrm{d}c,dS_b=h_ah_c\mathrm{d}a\mathrm{d}c...$ 
