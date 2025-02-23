@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 18 Feb 2025 06:08:15 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>电磁场与电磁波学习笔记——1矢量分析</title><link>https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</link><description>#数学基础/矢量，向量 #数学基础/坐标系 
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Sun, 23 Feb 2025 09:25:18 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>电磁场与电磁波学习笔记——1矢量分析</title><link>https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</link><description>#数学基础/矢量，向量 #数学基础/坐标系 
 # 1.1 矢量代数
 《电磁场与电磁波》（谢处方）中用 $\vec e_A$ 表示与$\vec A$同方向的单位矢量
 
@@ -17,7 +17,7 @@
 
 ### 三种常用的正交曲线坐标系与拉梅系数
 #数学基础/坐标系/拉梅系数 
-##### 直角坐标系
+#### 直角坐标系
 &lt;img src='https://github.com/user-attachments/assets/7bbac064-a030-4fdf-b2b6-7d44686bbe6e' width='300' /&gt;
 
 坐标变量变化范围： $`-\infty&lt;x&lt;\infty ,-\infty &lt;y&lt;\infty ,-\infty &lt;z&lt;\infty`$
@@ -35,7 +35,7 @@ B_x&amp; B_y&amp; B_z\end{vmatrix}=\vec e_x(A_yB_z-A_zB_y)-\vec e_y(A_x B_z-A_zB
 ```
 (满足顺序x→y→z的为正，不满足为负)
 
-##### 圆柱坐标系
+#### 圆柱坐标系
 
 &lt;img src='https://github.com/user-attachments/assets/5c1aeef0-215b-434c-b8c5-10e2215419b0' width='300' /&gt;
 
@@ -77,7 +77,8 @@ cos\phi \\
 
 有 $x=\rho cos\phi,y=\rho sin\phi$ ，则 $x^2+y^2=\rho^2$ 
   $e_\phi$ 与 $e_\rho$ 正交，有 $e_\phi \cdot e_\rho=0$ ，且 $e_\rho=ae_x+be_y$ ???疑惑，继续思考
-##### 球坐标系
+
+#### 球坐标系
 
 &lt;img src='https://github.com/user-attachments/assets/5a44a481-9d10-459e-bc72-bda15deded45' width='300' /&gt;
 
@@ -112,11 +113,92 @@ cos\theta \\
 \vec e_z \\
 \end{matrix}\right)
 ```
-##### 拉梅系数
-用于统一各坐标系，在计算线、面积、体积元，梯度、散度、旋度等时非常便利
+#### 拉梅系数
+用于统一各坐标系（统一度量衡！！！），在计算面积、体积元，梯度、散度、旋度等时非常便利
+&lt;img src='https://github.com/user-attachments/assets/fdd506e0-88f2-4ae4-9fae-0114f835f64b' width='300' /&gt;
+
 对于由abc三个自由度组成的三维坐标系，有：
-1. 面积元： $dS_a=h_bh_c\mathrm{d}b\mathrm{d}c,dS_b=h_ah_c\mathrm{d}a\mathrm{d}c...$ 
-2. 体积元： $dV=h_ah_bh_c\mathrm{d}a\mathrm{d}b\mathrm{d}c$ 。</description><guid isPermaLink="true">https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</guid><pubDate>Tue, 18 Feb 2025 05:33:21 +0000</pubDate></item><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
+1. 面积元： $dS_a=h_bh_c\mathrm{d}b\mathrm{d}c,dS_b=h_ah_c\mathrm{d}a\mathrm{d}c...$
+2. 体积元： $dV=h_ah_bh_c\mathrm{d}a\mathrm{d}b\mathrm{d}c$ 
+3. 梯度： $\mathrm{grad}u=\nabla u=\frac{1}{H_a}\vec e_a \frac{\partial u}{\partial a}+\frac{1}{H_b}\vec e_b \frac{\partial u}{\partial b}+\frac{1}{H_c}\vec e_c \frac{\partial u}{\partial c}$ 
+
+直角坐标：$h_\rho=1,h_y=1,h_z=1$ 
+&gt;求解过程：
+&gt; $h_x=\frac{\Delta l}{\Delta x}=\frac{\Delta x}{\Delta x}...$ 
+
+圆柱坐标：$h_\rho=1,h_\phi=\rho,h_z=1$ 
+&gt;求解过程：
+&gt; $h_\phi = \frac{\Delta l}{\Delta \phi}=\frac{\rho \Delta \phi}{\Delta \phi}=\rho$ 
+&lt;img src='https://github.com/user-attachments/assets/91ab2cb4-c4e3-4e98-a775-1a5c603ec309' width='300' /&gt;
+
+球坐标： $h_r=1,h_\theta=r,h_\phi=rsin\theta$ 
+&gt;求解过程：
+&gt;$h_\theta = \frac{\Delta l}{\Delta \theta}=\frac{r \Delta \theta}{\Delta \theta}=r$ 
+&gt;$h_\phi = \frac{\Delta l}{\Delta \phi}=\frac{rsin\theta \Delta \phi}{\Delta \phi}=rsin\theta$ 
+&lt;img src='https://github.com/user-attachments/assets/62088756-6697-4012-8199-016f5dd50dc1' width='300' /&gt;
+
+### 标量场的方向导数与梯度
+对于标量场u，直角坐标系表示：$u=u(x,y,z,t)$，位置矢量表示：$u=u(\vec r,t)$
+方向导数反映变化率，梯度反映最大变化率
+#### 等值面
+等值面：数值相同的点构成的曲面
+对于常数c， $u(\vec r)=c$ 表示对应的等值面
+特点：
+1. 等值面族充满场所在的整个空间
+2. 等值面互不相交
+
+#### 方向导数（标量）
+方向导数：
+$\frac{ \partial u}{ \partial l}|_{M_0}=lim{\Delta l→0}\frac{u(M)-u(M_0)}{\Delta l}$ ，表示标量场 $u(M)$ 在点 $M_0$ 处沿 $\vec l$ 方向对距离的变化率
+&lt;img src='https://github.com/user-attachments/assets/df409194-0e8b-42e7-8935-f1f8942cbb1d' width='300' /&gt;
+曲面上过某一点切线方向的变化率就是方向导数
+（曲面上某一点可以对应无数个方向导数）
+
+#### 梯度（矢量）
+定义  $\mathrm{grad} u$ 的方向为标量场u在点M处变化率最大的方向，$|\mathrm{grad} u|$ 即为最大的变化率（梯度总是指向标量函数增加的方向）
+哈密顿算子： $\nabla=\frac{1}{h_{1}}\vec e_1 \frac{\partial}{\partial a_1}+\frac{1}{H_2}\vec e_2 \frac{\partial}{\partial a_2}+\frac{1}{H_3}\vec e_3 \frac{\partial}{\partial a_3}$ 
+有 $\mathrm{grad}u=\nabla u=\frac{1}{h_{1}}\vec e_1 \frac{\partial u}{\partial a_1}+\frac{1}{H_2}\vec e_2 \frac{\partial u}{\partial a_2}+\frac{1}{H_3}\vec e_3 \frac{\partial u}{\partial a_3}$ 
+[[1矢量分析#拉梅系数|拉梅系数H]]
+
+&gt;引入拉梅系数的推导过程：
+&gt;对于 $u(a_1,a_2,a_3)→u(a_1+\Delta a_1,a_2+\Delta a_2,a_3+\Delta a_3)$ ，有 $\Delta l =(\Delta a_1,\Delta a_2,\Delta a_3)$ ，
+&gt;则有$\frac{\Delta u}{\Delta l}=\frac{u(a_1+\Delta a_1,...)-u(a_1,...)}{(\Delta a_1,\Delta a_2,\Delta a_3)}$ ，相当于对 $u$ 求全微分
+&gt;所以 $\frac{\Delta u}{\Delta l}=\frac{\partial u}{\partial a_1}\frac{\partial a_1}{\partial l}+\frac{\partial u}{\partial a_2}\frac{\partial a_2}{\partial l}+\frac{\partial u}{\partial a_3}\frac{\partial a_3}{\partial l}$ ，且 $\frac{ h_1\partial a_1}{\partial l}=cos\alpha$ 
+&gt;由此有 $\frac{\Delta u}{\Delta l}=(\frac{\partial u}{h_1\partial a_1}\vec e_1...)\cdot (cos\alpha \vec e_1...)=\nabla u \cdot \vec e_l$ 
+&gt;可得 $\nabla u=\frac{1}{h_{1}}\vec e_1 \frac{\partial u}{\partial a_1}+\frac{1}{H_2}\vec e_2 \frac{\partial u}{\partial a_2}+\frac{1}{H_3}\vec e_3 \frac{\partial u}{\partial a_3}$ 
+![[Excalidraw/Drawing 2025-02-20 10.44.11.excalidraw|300]]
+                                                
+
+梯度符合如下运算规则（**与求导法则相同！**）：
+1.  $\nabla (cu)=c\nabla u$ ，c为常数
+2.  $\nabla (u\pm v)=\nabla u \pm \nabla v$ 
+3.  $\nabla (uv)=v\nabla u + u\nabla v$  
+4.  $\nabla (\frac{u}{v})=\frac{1}{v^2}(v\nabla u - u\nabla v)$   
+5.  $\nabla f(u)=f\prime (u)\nabla u$ 
+
+**常用公式**（**重要！！！**）：
+1.  $\Delta R = \frac{\vec R}{R}$ 
+2.  $\Delta \frac{1}{R} = -\frac{\vec R}{R^3}$ 
+3.  $\nabla f(u)=-\nabla \prime f(u)$ ，其中 $\nabla \prime=\frac{1}{H_a}\vec e_a \frac{\partial}{\partial a\prime}+\frac{1}{H_b}\vec e_b \frac{\partial}{\partial b\prime}+\frac{1}{H_c}\vec e_c \frac{\partial}{\partial c\prime}$  
+
+梯度有以下特点：
+1. 标量场的梯度构成矢量场（梯度场）
+2. 标量场在给定点M出沿任意方向 $\vec e_l$ 的方向导数等于该点的梯度 $\nabla u$ 在方向 $\vec e_l$ 上的投影
+3. 标量场在点M处的梯度垂直与等值面，且指向 $u(M)$ 增加的方向
+
+**这里的场u是标量场，计算时记得转换！！！**
+例：
+已知  $\vec R=\vec e_x(x-x\prime)+\vec e_y(y-y\prime)+\vec e_z(z-z\prime)$ ， $R=|\vec R|$ ，证明 $\nabla R=\frac{\vec R}{R}$ 
+```math
+\nabla R = \nabla (\sqrt{(x-x\prime)^2+(y-y\prime)^2+(z-z\prime)^2})=....
+```
+
+### 矢量场的通量与散度
+矢量场可以表示为 $\vec F=\vec F(\vec r,t)$ 
+#### 矢量线
+矢量线上每一点的切线方向代表了该点矢量场 $\vec F(\vec r)$ 的方向
+![[Excalidraw/Drawing 2025-02-20 13.17.15.excalidraw|300]]
+。</description><guid isPermaLink="true">https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</guid><pubDate>Tue, 18 Feb 2025 05:33:21 +0000</pubDate></item><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
 
 Connectivity→Generate→All from source
 产生的东西：
