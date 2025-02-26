@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Tue, 25 Feb 2025 02:58:06 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>生活经历——狗东推销笔记本五年延保</title><link>https://delbacon.github.io/post/sheng-huo-jing-li-%E2%80%94%E2%80%94-gou-dong-tui-xiao-bi-ji-ben-wu-nian-yan-bao.html</link><description>一句话概括：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Wed, 26 Feb 2025 15:25:57 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>生活经历——狗东推销笔记本五年延保</title><link>https://delbacon.github.io/post/sheng-huo-jing-li-%E2%80%94%E2%80%94-gou-dong-tui-xiao-bi-ji-ben-wu-nian-yan-bao.html</link><description>一句话概括：
 **别信电话推销的任何话术，一切以纸面条款为准！**
 
 具体案例可以看下文：
@@ -24,7 +24,7 @@ https://zhuanlan.zhihu.com/p/566377863。</description><guid isPermaLink="true">
 #### 直角坐标系
 &lt;img src='https://github.com/user-attachments/assets/7bbac064-a030-4fdf-b2b6-7d44686bbe6e' width='300' /&gt;
 
-坐标变量变化范围： $`-\infty&lt;x&lt;\infty ,-\infty &lt;y&lt;\infty ,-\infty &lt;z&lt;\infty`$
+坐标变量变化范围： $-\infty \lt x \lt \infty ,-\infty  \lt y \lt \infty ,-\infty \lt z \lt \infty$
 
 1. 拉梅系数： $h_x=1,h_y=1,h_z=1$ 
 2. 位置矢量： $\vec r = |\vec r|\vec e_r$， $\vec e_r=\vec e_xcos\alpha+\vec e_ycos\beta+\vec e_zcos\gamma$  
@@ -43,7 +43,7 @@ B_x&amp; B_y&amp; B_z\end{vmatrix}=\vec e_x(A_yB_z-A_zB_y)-\vec e_y(A_x B_z-A_zB
 
 &lt;img src='https://github.com/user-attachments/assets/5c1aeef0-215b-434c-b8c5-10e2215419b0' width='300' /&gt;
 
-坐标变量变化范围： $`0\leq \rho &lt; \infty ,0\leq \phi \leq 2\pi ,-\infty &lt; z &lt;\infty`$  ， $\phi$ 以x轴为基准
+坐标变量变化范围： $`0\leq \rho  \lt  \infty ,0\leq \phi \leq 2\pi ,-\infty \lt  z  \lt \infty`$  ， $\phi$ 以x轴为基准
 1. 拉梅系数： $h_\rho=1,h_\phi=\rho,h_z=1$
 2. 位置矢量： $\vec r=\vec e_\rho+\vec e_zz$
 3. 注意： $\vec e_\rho,\vec e_\phi$ 是随 $\phi$ 变化的！！！（ $\vec e_\rho$ 与 $\rho$ 平面平行， $\vec e_\phi$ 与 $\rho$ 平面垂直，而 $\rho$ 平面受 $\phi$ 角影响），不同 $\rho$ 平面的矢量不能直接计算、
@@ -86,7 +86,7 @@ cos\phi \\
 
 &lt;img src='https://github.com/user-attachments/assets/5a44a481-9d10-459e-bc72-bda15deded45' width='300' /&gt;
 
-坐标变量变化范围： $`0\leq r&lt;\infty,0\leq \theta \leq \pi,\leq \phi \leq 2\pi`$ ， $\theta$ 以z轴为基准， $\phi$ 以x轴为基准
+坐标变量变化范围： $`0\leq r \lt \infty,0\leq \theta \leq \pi,\leq \phi \leq 2\pi`$ ， $\theta$ 以z轴为基准， $\phi$ 以x轴为基准
 1. 拉梅系数： $h_r=1,h_\theta=r,h_\phi=rsin\theta$  
 2. 位置矢量： $\vec r = \vec e_rr$ ，$\vec e_r$ 也是变量！
 3. 矢量的转化（球→直角）：
@@ -199,10 +199,16 @@ $\frac{ \partial u}{ \partial l}|_{M_0}=lim{\Delta l→0}\frac{u(M)-u(M_0)}{\Del
 
 ### 矢量场的通量与散度
 矢量场可以表示为 $\vec F=\vec F(\vec r,t)$ 
+产生的矢量场的矢量线不是闭合曲线的源成为**散度源**，通量与散度描述通量源的性质
+
 #### 矢量线
 矢量线上每一点的切线方向代表了该点矢量场 $\vec F(\vec r)$ 的方向
 ![[Excalidraw/Drawing 2025-02-20 13.17.15.excalidraw|300]]
-。</description><guid isPermaLink="true">https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</guid><pubDate>Tue, 18 Feb 2025 05:33:21 +0000</pubDate></item><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
+矢量线的微分方程： $\mathrm d\vec r \times \vec F=0$ （由上图中 $\mathrm d\vec r , \vec F$ 共线可得）
+（矢量线微分方程的拉梅系数表示有无？） ^e240a0
+
+例：
+对位于坐标原点的点电荷q，在周围空间任一点  $M(x,y,z)$ 处产生的电场强度矢量 $E=\frac{q}{4\pi\varepsilon r^3}\vec r$ ，其中 $\varepsilon$ 为介电常数， $\vec r=\vec e_xx+\vec e_yy+\vec e_zz$ ，求电场强度矢量 $E$ 的矢量线。</description><guid isPermaLink="true">https://delbacon.github.io/post/dian-ci-chang-yu-dian-ci-bo-xue-xi-bi-ji-%E2%80%94%E2%80%941-shi-liang-fen-xi.html</guid><pubDate>Tue, 18 Feb 2025 05:33:21 +0000</pubDate></item><item><title>virtuoso学习记录2</title><link>https://delbacon.github.io/post/virtuoso-xue-xi-ji-lu-2.html</link><description>launch→layout XL进入版图绘制界面
 
 Connectivity→Generate→All from source
 产生的东西：
