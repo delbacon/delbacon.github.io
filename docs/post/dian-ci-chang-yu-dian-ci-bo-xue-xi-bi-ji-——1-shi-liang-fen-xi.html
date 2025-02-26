@@ -694,7 +694,7 @@ $$\nabla R = \nabla (\sqrt{(x-x\prime)^2+(y-y\prime)^2+(z-z\prime)^2})=....$$
 对位于坐标原点的点电荷q，在周围空间任一点  $M(x,y,z)$ 处产生的电场强度矢量 $E=\frac{q}{4\pi\varepsilon r^3}\vec r$ ，其中 $\varepsilon$ 为介电常数， $\vec r=\vec e_xx+\vec e_yy+\vec e_zz$ ，求电场强度矢量 $E$ 的矢量线。</p>
 <h4>通量</h4>
 <p>通量表述通过某一曲面S的矢量线数量<br>
-![[Excalidraw/Drawing 2025-02-25 09.47.54.excalidraw|300]]<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/44a4d54f-79ab-4343-9d4f-f40ba3a468ca"><img src="https://github.com/user-attachments/assets/44a4d54f-79ab-4343-9d4f-f40ba3a468ca" width="400" style="max-width: 100%;"></a><br>
 定义式： $\Phi=\int_S \vec F\cdot \mathrm d\vec S$ ， $\Phi$ 即为通量<br>
 例如，磁通量就是磁感强度B在曲面S上的面积分</p>
 <p>对于闭曲面，当 $\Phi&amp;gt;0$ 时，曲面内必有发出矢量线的源……</p>
@@ -702,10 +702,11 @@ $$\nabla R = \nabla (\sqrt{(x-x\prime)^2+(y-y\prime)^2+(z-z\prime)^2})=....$$
 <h5>定义</h5>
 <p>由于通量只能反映某一区域的特性，缩小到某一点上并不确定，我们利用极限，引入散度。<br>
 定义式： $\vec \nabla \cdot \vec F =\mathrm{div}\vec F=lim_{\Delta V→0}\dfrac{\oint\vec F \cdot \mathrm d\vec S}{\Delta V}$<br>
-计算式： $$\begin{aligned}<br>
-\vec \nabla \cdot \vec F =\dfrac{1}{h_1h_2h_3}\left(\dfrac{\partial(F_1h_2h_3)}{\partial a_1}+\dfrac{\partial(F_2h_3h_1)}{\partial a_2}+\dfrac{\partial(F_3h_1h_2)}{\partial a_3}\right)<br>
-\end{aligned}$$<br>
-常用公式：</p>
+计算式：</p>
+$$\begin{aligned}
+\vec \nabla \cdot \vec F =\dfrac{1}{h_1h_2h_3}\left(\dfrac{\partial(F_1h_2h_3)}{\partial a_1}+\dfrac{\partial(F_2h_3h_1)}{\partial a_2}+\dfrac{\partial(F_3h_1h_2)}{\partial a_3}\right)
+\end{aligned}$$
+<p>常用公式：</p>
 <ol>
 <li>
 $\vec \nabla (C\vec F)=C\vec\nabla\cdot\vec F$ （C为常数）</li>
@@ -715,20 +716,21 @@ $\vec \nabla (u\vec F)=u\vec\nabla\cdot\vec F+\vec F\cdot\vec\nabla u$ （$\vec\
 </ol>
 <blockquote>
 <p>计算式推导过程：<br>
-利用向前差分<br>
-![[Excalidraw/Drawing 2025-02-25 11.07.42.excalidraw|300]]$$\begin{aligned}<br>
-&amp;有\Delta V=h_1\Delta a_1<del>h_2\Delta a_2</del>h_3\Delta a_3 ,\<br>
-&amp;\int_{front}\vec F\cdot\mathrm d\vec S\approx\vec F(a_1+\Delta a_1,a_2,a_3)<del>h_2\Delta a_2</del>h_3\Delta a_3  \qquad  \int_{behind}\vec F\cdot\mathrm d\vec S\approx-\vec F(a_1,a_2,a_3)<del>h_2\Delta a_2</del>h_3\Delta a_3...\<br>
-&amp;所以<br>
-\Phi=\oint_S\vec F \cdot\mathrm d\vec S=\int_{front}+\int_{behind}+...\<br>
-&amp;\vec \nabla \cdot \vec F=lim_{\Delta V→0}\dfrac{\Phi}{\Delta V}\<br>
-&amp;=lim_{\Delta V→0}\dfrac{\vec F(a_1+\Delta a_1,a_2,a_3)<del>h_2\Delta a_2</del>h_3\Delta a_3-\vec F(a_1,a_2,a_3)<del>h_2\Delta a_2</del>h_3\Delta a_3+...}{h_1\Delta a_1<del>h_2\Delta a_2</del>h_3\Delta a_3}\<br>
-&amp;=\dfrac{1}{h_1h_2h_3}\left(lim_{\Delta V→0}\dfrac{\vec F(a_1+\Delta a_1,a_2,a_3)-\vec F(a_1,a_2,a_3)}{\Delta a_1}+lim_{\Delta V→0}...\right)\<br>
-&amp;=\dfrac{1}{h_1h_2h_3}\left(\dfrac{\partial(F_1h_2h_3)}{\partial a_1}+\dfrac{\partial(F_2h_3h_1)}{\partial a_2}+\dfrac{\partial(F_3h_1h_2)}{\partial a_3}\right)<br>
-\end{aligned}$$</p>
+利用向前差分</p>
 </blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/2f219d87-2935-4947-a7ee-53658a65e225"><img src="https://github.com/user-attachments/assets/2f219d87-2935-4947-a7ee-53658a65e225" width="200" style="max-width: 100%;"></a></p>
+$$\begin{aligned}
+&amp;有\Delta V=h_1\Delta a_1~h_2\Delta a_2~h_3\Delta a_3 ,\\\
+&amp;\int_{front}\vec F\cdot\mathrm d\vec S\approx\vec F(a_1+\Delta a_1,a_2,a_3)~h_2\Delta a_2~h_3\Delta a_3  \qquad  \int_{behind}\vec F\cdot\mathrm d\vec S\approx-\vec F(a_1,a_2,a_3)~h_2\Delta a_2~h_3\Delta a_3...\\\
+&amp;所以
+\Phi=\oint_S\vec F \cdot\mathrm d\vec S=\int_{front}+\int_{behind}+...\\\
+&amp;\vec \nabla \cdot \vec F=lim_{\Delta V→0}\dfrac{\Phi}{\Delta V}\\\
+&amp;=lim_{\Delta V→0}\dfrac{\vec F(a_1+\Delta a_1,a_2,a_3)~h_2\Delta a_2~h_3\Delta a_3-\vec F(a_1,a_2,a_3)~h_2\Delta a_2~h_3\Delta a_3+...}{h_1\Delta a_1~h_2\Delta a_2~h_3\Delta a_3}\\\
+&amp;=\dfrac{1}{h_1h_2h_3}\left(lim_{\Delta V→0}\dfrac{\vec F(a_1+\Delta a_1,a_2,a_3)-\vec F(a_1,a_2,a_3)}{\Delta a_1}+lim_{\Delta V→0}...\right)\\\
+&amp;=\dfrac{1}{h_1h_2h_3}\left(\dfrac{\partial(F_1h_2h_3)}{\partial a_1}+\dfrac{\partial(F_2h_3h_1)}{\partial a_2}+\dfrac{\partial(F_3h_1h_2)}{\partial a_3}\right)
+\end{aligned}$$
 <p>$\vec \nabla \cdot \vec F$ 描述了通量源的密度，其正负与通量源的关系如下：<br>
-![[Excalidraw/Drawing 2025-02-25 10.39.51.excalidraw|600]]</p>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/c3b4be0e-a7e4-4ef4-8232-28b0b002b94f"><img src="https://github.com/user-attachments/assets/c3b4be0e-a7e4-4ef4-8232-28b0b002b94f" width="400" style="max-width: 100%;"></a></p>
 <h5>散度定理</h5>
 <p>$$\int_V\vec \nabla\cdot\vec FdV=\oint_S\vec F\cdot\mathrm d\vec S\left(\int_V通量密度(散度)\cdot \mathrm d体积= 通量\right)$$</p>
 <h3>矢量场的环流与旋度</h3>
