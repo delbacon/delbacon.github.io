@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark-blue" data-light-theme="dark" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
+<meta name="description" content="#信号与系统 #信号与系统/信号
+信号：输入输出
+系统：处理与响应部分
+
+# 1.1信号的描述，分类与典型示例
+### 分类
+确定信号：可以表示为一确定的时间函数的信号
+随机信号：没有确切的时间函数的信号
+
+周期性信号/非周期信号
+
+连续时间信号：除若干不连续点外，对任意时间值都有确切函数值的信号
+离散时间信号：在时间上离散，只在某些不连续的规定瞬时给出函数值的信号
+模拟信号：时间和幅值均连续
+抽样信号：时间离散，幅值连续
+数字信号：时间和幅值均离散
+![[Pasted image 20250218165726.png|400]] 
+
+### 典型信号示例
+#### 指数信号
+![[Pasted image 20250218165905.png|500]]
+
+表达式： $f(t)=Ke^{at}$ 
+时间常数 $\tau=\frac{1}{|a|}$ ，反应信号变化速率， $\tau$ 越大，速率越慢。">
+<meta property="og:title" content="信号与系统学习笔记——1绪论">
+<meta property="og:description" content="#信号与系统 #信号与系统/信号
+信号：输入输出
+系统：处理与响应部分
+
+# 1.1信号的描述，分类与典型示例
+### 分类
+确定信号：可以表示为一确定的时间函数的信号
+随机信号：没有确切的时间函数的信号
+
+周期性信号/非周期信号
+
+连续时间信号：除若干不连续点外，对任意时间值都有确切函数值的信号
+离散时间信号：在时间上离散，只在某些不连续的规定瞬时给出函数值的信号
+模拟信号：时间和幅值均连续
+抽样信号：时间离散，幅值连续
+数字信号：时间和幅值均离散
+![[Pasted image 20250218165726.png|400]] 
+
+### 典型信号示例
+#### 指数信号
+![[Pasted image 20250218165905.png|500]]
+
+表达式： $f(t)=Ke^{at}$ 
+时间常数 $\tau=\frac{1}{|a|}$ ，反应信号变化速率， $\tau$ 越大，速率越慢。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%941-xu-lun.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>信号与系统学习笔记——1绪论</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">信号与系统学习笔记——1绪论</h1>
+<div class="title-right">
+    <a href="https://delbacon.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/delbacon/delbacon.github.io/issues/5" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>#信号与系统 #信号与系统/信号<br>
+信号：输入输出<br>
+系统：处理与响应部分</p>
+<h1>1.1信号的描述，分类与典型示例</h1>
+<h3>分类</h3>
+<p>确定信号：可以表示为一确定的时间函数的信号<br>
+随机信号：没有确切的时间函数的信号</p>
+<p>周期性信号/非周期信号</p>
+<p>连续时间信号：除若干不连续点外，对任意时间值都有确切函数值的信号<br>
+离散时间信号：在时间上离散，只在某些不连续的规定瞬时给出函数值的信号<br>
+模拟信号：时间和幅值均连续<br>
+抽样信号：时间离散，幅值连续<br>
+数字信号：时间和幅值均离散<br>
+![[Pasted image 20250218165726.png|400]]</p>
+<h3>典型信号示例</h3>
+<h4>指数信号</h4>
+<p>![[Pasted image 20250218165905.png|500]]</p>
+<p>表达式： $f(t)=Ke^{at}$<br>
+时间常数 $\tau=\frac{1}{|a|}$ ，反应信号变化速率， $\tau$ 越大，速率越慢。<br>
+对于 $f(t)=e^{-\frac{t}{\tau}}$ 有 $f(\tau)=0.368$</p>
+<p>特性：其对时间的微积分仍是指数形式</p>
+<h4>正弦信号</h4>
+<p>![[Pasted image 20250220132822.png|500]]</p>
+<p>表达式： $f(t)=Ksin(\omega t+\theta)$<br>
+角频率 $\omega=2\pi f = \frac{2\pi}{T}$</p>
+<p>特性：其对时间的微积分仍是同频率正弦形式</p>
+<h4>复指数信号</h4>
+<p>表达式： $f(t)=Ke^{st},s=\sigma +j\omega$   ，将复数作为指数信号的指数因子<br>
+根据 [[1 复数与复变函数#^485c65|欧拉公式]] ，上式可变化为 $f(t)=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)$</p>
+<p>变化情况受 $\sigma$ 的正负影响， $\sigma&amp;gt;0$ 则增幅振荡， $\sigma &amp;lt;0$ 则衰减振荡<br>
+![[Pasted image 20250221161009.png|300]]</p>
+<h4>Sa(t)信号（抽样信号）</h4>
+<p>![[Pasted image 20250220222233.png|500]]</p>
+<p>定义式： $Sa(t)=\frac{sint}{t}$ （有相似的函数 $sinc(t)=\frac{sin(\pi t)}{\pi t}$ )<br>
+特性：</p>
+<ol>
+<li>
+$Sa(t)$ 为偶函数，且振幅逐渐衰减</li>
+<li>$\int^{\infty}_{0}Sa(t)\mathrm{d}t=\frac{\pi}{2}$</li>
+<li>
+$Sa(t)=1,t=0$ ， $Sa(t)=0,t=\pm k\pi$
+</li>
+</ol>
+<h4>钟形信号（高斯函数）</h4>
+<p>![[Pasted image 20250221162006.png|400]]</p>
+<p>定义式： $f(t)=Ee^{-(\frac{t}{\tau})^2}$</p>
+<p>有 $f(\frac{\tau}{2})=Ee^{-\frac{1}{4}}=0.78E$ ，$\tau$ 即为信号由  $E$ 下降到 $0.78E$ 时，占据的时间宽度</p>
+<h1>1.2信号的运算</h1>
+<h3>移位</h3>
+<p>对自变量 $t$ 进行加减 $t_0$ 的运算（右减延迟，左增提前）<br>
+$f(t)→f(t\pm t_0)$<br>
+<strong>左增右减！！！</strong><br>
+![[Excalidraw/Drawing 2025-02-21 16.27.05.excalidraw|700]]</p>
+<h3>反褶</h3>
+<p>将自变量 $t$ 更换为 $-t$ 的运算（对调信号的过去和未来，反转时间轴）<br>
+$f(t)→f(-t)$<br>
+![[Excalidraw/Drawing 2025-02-21 16.33.42.excalidraw|500]]</p>
+<h3>尺度变换</h3>
+<p>对自变量 $t$ 乘系数 $a$ ，使 $f(t)$ 波形压缩（ $a&amp;gt;1$ ）或扩展（ $a&amp;lt;1$ ）<br>
+$f(t)→f(at)$<br>
+![[Excalidraw/Drawing 2025-02-21 16.51.21.excalidraw|700]]</p>
+<p><strong>注意：变换均基于自变量 $t$ 本身，与系数无关！！！</strong><br>
+例：已知 $f(t)$ ，求 $f(3t+5)$</p>
+<ol>
+<li>
+$f[3(t+\frac{5}{3})]$ ，先3倍速，再左移 $\frac{5}{3}$ （因为位移是基于原速的，这里3倍速会同时影响位移）</li>
+<li>先左移5，再三倍速<br>
+![[Excalidraw/Drawing 2025-02-21 17.03.37.excalidraw|600]]<br>
+（可以通过计算特殊点验证）</li>
+</ol>
+<h3>微分</h3>
+<p>微分表示信号随时间变化的变化率（突出函数变化的部分），如黑白图片经微分后边缘轮廓突出<br>
+$f(t)→f\prime(t)$<br>
+![[Excalidraw/Drawing 2025-02-21 17.20.05.excalidraw|200]]</p>
+<h3>积分</h3>
+<p>积分可以使突变部分变得平滑（与所围面积有关，而不仅仅关注函数值），如毛刺信号经积分后影响变小<br>
+$f(t)→\int^t_{-\infty} f(\tau)\mathrm{d}t=f^{(-1)}(t)$<br>
+![[Excalidraw/Drawing 2025-02-21 20.12.02.excalidraw|200]]</p>
+<h1>1.3奇异信号（斜变、阶跃、冲激）</h1>
+<p>奇异信号描述本身有跳变点，或导数/积分有不连续点的函数</p>
+<p>有相互转化关系：</p>
+$$\frac{\mathrm{d}f(t)}{\mathrm{d}t}=u(t),\frac{\mathrm{d}u(t)}{\mathrm{d}t}=\delta (t),\frac{\mathrm{d}\delta(t)}{\mathrm{d}t}=\delta\prime (t)$$
+<h3>单位斜变信号</h3>
+<h5>表达式、关联与作用</h5>
+<p>![[Excalidraw/Drawing 2025-02-21 20.35.40.excalidraw|200]]<br>
+表达式： $$f(t)=\begin{cases}0\qquad t&lt;0\t\qquad t\geq0\end{cases}$$<br>
+引申出截平的斜边信号和三角脉冲：<br>
+![[Excalidraw/Drawing 2025-02-21 20.38.19.excalidraw]]</p>
+<h3>单位阶跃信号</h3>
+<p>![[Excalidraw/Drawing 2025-02-21 21.10.01.excalidraw|300]]</p>
+<h4>表达式、关联与作用</h4>
+<p>表达式：</p>
+$$u(t)=\begin{cases}
+0\qquad t&lt;0\\\
+1\qquad t&gt;0
+\end{cases}$$ 在跳变点 $t=0$ 处，函数值未定义，也可规定为 $\frac{1}{2}$$$
+<p>关联：单位阶跃函数是单位斜变函数的微分： $\frac{\mathrm{d}f(t)}{\mathrm{d}t}=u(t)$<br>
+作用：可以将分段函数整合为一个函数，并且减少函数对自变量的限制</p>
+<h4>例题</h4>
+<p>例1： $sint(t&amp;gt;0)→u(t)sint$</p>
+<p>例2： 用 $u(t)$ 表示门信号 $G(t)$<br>
+![[Excalidraw/Drawing 2025-02-21 21.23.34.excalidraw|600]]</p>
+$$G(t)=u(t+\frac{\tau}{2})-u(t-\frac{\tau}{2})$$
+<p>例3：用 $u(t)$ 表示矩形脉冲 $D(t)$ （周期为T）<br>
+![[Excalidraw/Drawing 2025-02-21 21.40.33.excalidraw|300]]</p>
+$$\begin{aligned}
+D(t)&amp;=E\left[u(t+\frac{\tau}{2})-u(t-\frac{\tau}{2})\right]+\left[u(t+\frac{\tau}{2}+T)-u(t-\frac{\tau}{2}+T)\right]+...\\\
+&amp;=E\sum^{\infty}_{n=0}\left[u(t+\frac{\tau}{2}+nT)-u(t-\frac{\tau}{2}+nT)\right]
+\end{aligned}$$
+<p>例4：用 $u(t)$ 表示符号函数</p>
+$$sgn(t)=\begin{cases}
+1\qquad t&gt;0\\\
+-1\qquad t&lt;0
+\end{cases}$$
+<p>![[Excalidraw/Drawing 2025-02-21 21.52.59.excalidraw]]<br>
+$sgn\left(t\right)=2u\left(t\right)-1=u\left(t\right)-u\left(-t\right)$</p>
+<h3>单位冲激信号</h3>
+<h4>表达式、关联与作用</h4>
+<p>![[Excalidraw/Drawing 2025-02-22 08.56.01.excalidraw]]</p>
+<p>表达式：</p>
+<pre lang="math\delta(t)=lim_{\tau→0}\left{\frac{1}{\tau}\left[u\left(t+\frac{\tau}{2}\right)\right]-\left[u\left(t-\frac{\tau}{2}\right)\right]\right}" class="notranslate"><code class="notranslate"></code></pre>
+<p>（将底为 $\tau$ ，面积为1的矩形函数压缩成一条线）</p>
+<p>上述为通过矩形函数定义冲激函数，也可以通过三角形脉冲等定义</p>
+<blockquote>
+<p>三角形脉冲定义：<br>
+![[Excalidraw/Drawing 2025-02-22 09.09.26.excalidraw|300]]</p>
+</blockquote>
+$$\delta(t)=lim_{\tau→0}\left\{\frac{1}{\tau} \left(1-\frac{|t|}{\tau}\right) \left[u\left(t+\tau \right) -u \left(t-\tau\right) \right] \right\}$$
+<blockquote>
+<p>狄拉克定义：</p>
+</blockquote>
+$$\begin{cases}
+\int^\infty_{-\infty}\delta \left(t\right)\mathrm{d}t=1 \\\
+\delta\left(t\right)=0\qquad(t\neq0时)
+\end{cases}$$
+<p>^a127a7</p>
+<p>作用：冲激信号具有<strong>筛选（抽样）特性</strong> ，对于延迟为 $t_0$ 的单位冲激信号，根据[[1绪论(信号与系统简介）#^a127a7|狄拉克定义]] ，有</p>
+$$\begin{aligned}
+\int^\infty_{-\infty}\delta (t-t_0)f(t)\mathrm dt&amp;=\int^\infty_{-\infty}\delta (t-t_0)f(t_0)\mathrm dt=f(t_0)\int^\infty_{-\infty}\delta (t-t_0)\mathrm dt \\ &amp;=f(t_0)
+\end{aligned}$$
+<p>将 $f(t_0)$ 抽样出</p>
+<h4>例题</h4>
+<p>例1：</p>
+$$\begin{aligned}
+\int_{-\infty}^\infty e^{-j\omega t}\left [\delta(t)-\delta(t-t_0)\right]\mathrm dt=e^{-j\omega\times0}-e^{-j\omega \times t_0}
+\end{aligned}$$
+例2：$$\begin{aligned}
+令t-2t_0=\tau, 则t-t_0=\tau+t_0\\\
+\int_{-\infty}^\infty u(t-2t_0)\delta(t-t_0)\mathrm dt
+&amp;=\int_{-\infty}^\infty u(\tau)\delta \left[\tau-(-t_0) \right]\mathrm d\tau \\\
+&amp;=u(-t_0)\\\
+\end{aligned}$$
+<h3>冲激偶信号</h3>
+<h1>1.4信号的分解</h1>
+<h3>直流分量与交流分量</h3>
+<p>信号的直流分量为信号的平均值，其余部分为交流分量（交流分量的积分为0）<br>
+表达式： $f(t)=f_D+f_A(t)$<br>
+![[Excalidraw/Drawing 2025-02-26 22.48.00.excalidraw|600]]</p>
+<h3>偶分量与奇分量</h3>
+<p>任意函数都可以分解为奇函数与偶函数的和<br>
+表达式： 偶分量： $f_e(t)=f_e(-t)$ ，奇分量： $f_o(t)=-f_o(-t)$</p>
+<blockquote>
+<p>推导过程：</p>
+</blockquote>
+$$\begin{aligned}
+定义f_e(t)=f(t)+f(-t),f_o(t)=f(t)-f(-t) \\\
+则f(t)=\frac{1}{2}\left[f_e(t)+f_o(t)\right]
+\end{aligned}$$
+<h3>脉冲分量</h3>
+<h4>矩形窄脉冲分量</h4>
+$$\begin{aligned}
+&amp;对于t_1→t_1+\Delta t_1范围的单个矩形脉冲，有表达式 f(t_1)\left[u(t-t_1)-u(t-t_1-\Delta t_1)\right]\\\
+	&amp;将f(t)看作无数个脉冲的集合，那么有\\\
+	f(t)&amp;=\sum^{\infty}_{t_1=-\infty}f(t_1) \cdot \left[u(t-t_1)-u(t-t_1-\Delta t_1)\right]\\\
+	&amp;取\Delta t_1→0的极限，通过简单变换，有\\\
+	f(t)&amp;=lim_{\Delta t_1→0}\sum^{\infty}_{t_1=-\infty}f(t_1) \cdot \frac{u(t-t_1)-u(t-t_1-\Delta t_1)}{\Delta t_0} \cdot \Delta t_0\\\
+	&amp;=lim_{\Delta t_1→0}\sum^{\infty}_{t_1=-\infty}f(t_1)\delta(t-t_1)\Delta t_1
+	\\\
+	&amp;=\int^\infty_{-\infty}f(t_1)\delta(t-t_1)\mathrm d t_1\\\
+	&amp;又因为冲激函数\delta(t)是偶函数，上式也可以写为\int^\infty_{-\infty}f(t)\delta(t-t_1)\mathrm d t,\\\
+	&amp;这证明了冲激函数的筛选 特性\\\
+\end{aligned}$$
+<p>![[Excalidraw/Drawing 2025-02-26 22.51.37.excalidraw]]</p>
+<h4>阶跃信号分量</h4>
+<p>推导类似上文。<br>
+![[Excalidraw/Drawing 2025-02-26 22.55.38.excalidraw]]</p>
+<h3>实部分量与虚部分量</h3>
+<p>类似偶分量与奇分量，这里利用共轭分解函数<br>
+表达式： $f(t)=f_r(t)+jf_i(t)$ ，共轭$f^*(t)=f_r(t)-jf_i(t)$</p>
+<blockquote>
+<p>推导过程：</p>
+</blockquote>
+$$\begin{aligned}
+定义f(t)=f_r(t)+jf_i(t),f^*(t)=f_r(t)-jf_i(t) \\\
+则f_r(t)=\frac{1}{2}\left[f(t)+f_r(t)\right],f_i(t)=\frac{1}{2}\left[f(t)-f_r(t)\right],
+\end{aligned}$$
+<h3>正交函数分量</h3>
+<p>如傅里叶级数（三角函数是正交函数）</p>
+<h1>1.5系统模型及分类</h1>
+<h3>模型</h3>
+<h3>分类</h3>
+<ol>
+<li>连续时间系统/离散时间系统：<br>
+连续时间系统：输入输出是连续信号，且内部未转换为离散信号，离散反之</li>
+<li>及时系统/动态系统</li>
+<li>集总参数系统/分布参数系统：<br>
+由集总/分布元件决定</li>
+<li>线性系统/非线性系统：<br>
+具有<strong>叠加性与均匀性</strong>的为线性系统（具体在1.6）</li>
+<li>时变系统/时不变系统：<br>
+系统参数<strong>不随时间变化</strong>的为时不变系统（具体在1.6）</li>
+<li>可逆系统/不可逆系统：<br>
+输入可以唯一确定一个输出的是可逆系统</li>
+</ol>
+<h1>1.6线性时不变（LTI）</h1>
+<h3>线性特性（叠加性，均匀性）</h3>
+<h4>叠加性&amp;均匀性</h4>
+<p>![[Excalidraw/Drawing 2025-02-27 23.36.57.excalidraw|600]]<br>
+![[Excalidraw/Drawing 2025-02-27 23.53.57.excalidraw|600]]</p>
+<blockquote>
+<p>例：</p>
+</blockquote>
+$$\begin{aligned}&amp;1.r(t)=e(t)+2 \\\
+ &amp; 有 \left(对输出r(t)乘C\right)\quad Cr(t)=Ce(t)+2C\ne Ce(t)+2\quad\left(对输入e(t)乘C\right),\\\
+ &amp;所以不满足均匀性\\\
+ &amp;\\\
+ &amp;2.\dfrac{\mathrm dr(t)}{\mathrm dt} +10r(t)+5=e(t)\\\
+ &amp;有 \left(对输出r(t)乘C\right)\quad \dfrac{C\mathrm dr(t)}{\mathrm dt} +10Cr(t)+5\ne\dfrac{C\mathrm dr(t)}{\mathrm dt} +10Cr(t)+5C=Ce(t)\quad\left(对输入e(t)乘C\right),\\\
+  &amp;所以不满足均匀性\\\
+ \end{aligned}$$
+<h4>时不变性</h4>
+<p>时不变性：系统参数本身不随时间改变<br>
+若激励为 $e(t)$ ，产生响应 $r(t)$ ; 若激励为 $e(t+t_0)$ ，产生响应 $r(t+t_0)$</p>
+<blockquote>
+<p>例：</p>
+</blockquote>
+$$\begin{aligned}
+&amp;对于r(t)=te(t),若符合时不变性，则应有：\\\
+&amp;r(t+t_0)=(t+t_0)e(t+t_0)→r(\tau)=\tau e(\tau)\\\
+&amp;但将激励e(t)→e(t+t_0)，实际为te(t+t_0)，所以不符合时不变性
+\end{aligned}$$
+<h4>微分特性</h4>
+<p>微分特性：若系统在激励 $e(t)$ 作用下产生响应 $r(t)$ ，则当激励为 $\dfrac{\mathrm de(t)}{\mathrm dt}$ 时，响应为 $\dfrac{\mathrm dr(t)}{\mathrm dt}$<br>
+可以扩展到高阶导数与微分</p>
+<h4>因果性</h4>
+<p>因果系统：系统在 $t_0$ 时刻的响应只与 $t\le t_0$ 时刻（过去）的输入有关</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://delbacon.github.io">delbacon的小窝</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("02/04/2025"!=""){
+    var startSite=new Date("02/04/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","delbacon/delbacon.github.io");
+    script.setAttribute("issue-term","title");
+    
+    script.setAttribute("theme","dark-blue");
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>

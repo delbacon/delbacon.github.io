@@ -1,5 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Mon, 03 Mar 2025 12:59:09 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>生活经历——京东推销笔记本五年延保</title><link>https://delbacon.github.io/post/sheng-huo-jing-li-%E2%80%94%E2%80%94-jing-dong-tui-xiao-bi-ji-ben-wu-nian-yan-bao.html</link><description>一句话概括：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Mon, 03 Mar 2025 13:06:13 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>信号与系统学习笔记——1绪论</title><link>https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%941-xu-lun.html</link><description>#信号与系统 #信号与系统/信号
+信号：输入输出
+系统：处理与响应部分
+
+# 1.1信号的描述，分类与典型示例
+### 分类
+确定信号：可以表示为一确定的时间函数的信号
+随机信号：没有确切的时间函数的信号
+
+周期性信号/非周期信号
+
+连续时间信号：除若干不连续点外，对任意时间值都有确切函数值的信号
+离散时间信号：在时间上离散，只在某些不连续的规定瞬时给出函数值的信号
+模拟信号：时间和幅值均连续
+抽样信号：时间离散，幅值连续
+数字信号：时间和幅值均离散
+![[Pasted image 20250218165726.png|400]] 
+
+### 典型信号示例
+#### 指数信号
+![[Pasted image 20250218165905.png|500]]
+
+表达式： $f(t)=Ke^{at}$ 
+时间常数 $\tau=\frac{1}{|a|}$ ，反应信号变化速率， $\tau$ 越大，速率越慢。</description><guid isPermaLink="true">https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%941-xu-lun.html</guid><pubDate>Mon, 03 Mar 2025 13:05:47 +0000</pubDate></item><item><title>生活经历——京东推销笔记本五年延保</title><link>https://delbacon.github.io/post/sheng-huo-jing-li-%E2%80%94%E2%80%94-jing-dong-tui-xiao-bi-ji-ben-wu-nian-yan-bao.html</link><description>一句话概括：
 **别信电话推销的任何话术，一切以纸面条款为准！**
 
 具体案例可以看下文：
