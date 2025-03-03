@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark-blue" data-light-theme="dark" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
+<meta name="description" content="# 2.2 微分方程的建立（以RLC电路为例）
+有元件的VI特性：
+![[Excalidraw/Drawing 2025-03-01 13.03.00.excalidraw|800]]
+
+>例：对于如下电路，以 $I_S(t)$ 为激励源，列出 $v(t)$ 的表达式
+![[Excalidraw/Drawing 2025-03-01 13.11.19.excalidraw]]
+根据元件的VI特性，有：$$\begin{aligned}
+&i_R(t)=\dfrac{1}{R}v(t)\qquad i_L(t)=\dfrac{1}{L}\int v(\tau)\mathrm d\tau \qquad i_C(t)=C\dfrac{\mathrm dv(t)}{\mathrm dt}\\
+&可列：I_S(t)=i_R(t)+i_L(t)+i_C(t)→I_S\prime(t)=\dfrac{1}{R}v\prime(t)+\dfrac{1}{L}v(t)+Cv\prime\prime(t)
+\end{aligned}$$
+
+# 2.3用时域经典法求解常系数微分方程
+常系数微分方程（没有常数项！）：$$
+C_0r^n(t)+C_1r^{n-1}(t)+...+C_nr(t)=E_0e^n(t)+E_1e^{n-1}(t)+...+E_ne(t)
+$$
+解由齐次解与特解组成，还需要借助初始条件求出待定系数，具体方法如下：
+
+### 求齐次解
+齐次解是 $e(t)$ 及其各阶导数均为0的情况，即**令微分方程右侧为0**，反映的是不受激励影响的**固有频率** 
+具体求解思路为：列写齐次方程→求解根→线性组合得出齐次解 $r_h(t)=\sum^n_{k=1} A_ke^{kt}$ 
+>这里以微分方程 $r\prime\prime(t)+3r\prime(t)+2r(t)=e(t)$ 为例，阐述求解步骤：$$\begin{aligned}&令右侧为0，可得r\prime\prime(t)+3r\prime(t)+2r(t)=0\\
+&因为涉及到高阶求导，如果所求函数的求导是其本身，会使计算变得简单\\
+&我们猜测r(t)=e^{at},则a^2e^{at}+3ae^{at}+2e^{at}=0，可得a^2+3a+2=0，即为\textbf{齐次方程}\\
+&易得解a_1=-1,a_2=-2,经线性组合可得齐次解r_h(t)=A_1e^{-t}+A_2e^{-2t}
+\end{aligned}$$
+
+若出现n重根，则通过乘 $t^n...t$ 进行区分
+>例：$$\begin{aligned} 
+&对于r\prime\prime\prime(t)+7r\prime\prime(t)+16r\prime(t)+12r(t)=e(t),有齐次方程:\\
+&a^3+7a^2+16a+12=(a+2)(a+2)(a+3)=0,解得根a_1=a_2=-2,a_3=-3\\
+ &则有齐次解r_h(t)=(A_1t+A_2)e^{-2t}+A_3e^{-3t}\\
+ & \\
+ &对于更多重根同理，如三重根可写为(A_1t^2+A_2t+A_3)e^{at}
+\end{aligned}$$
+
+### 求特解
+特解的形式与激励函数形式有关，是激励函数与其各阶导数的线性叠加，反映的是激励影响下的**强迫响应**  
+具体求解思路为：左侧代入特解函数式，右侧代入e(t)的表达式，通过系数比对解出
+若特解与齐次解重复，参考齐次解中n重根的处理方法
+
+|          激励函数e(t)          |                                                         响应函数r(t)的特解                                                         |
+| :------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
+|            常数E             |                                                              B                                                              |
+|           $t^p$            |                                            $B_1t^p+B_2t^{p-1}+...+B_pt+B_{p+1}$                                             |
+|          $e^{at}$          |                                                          $Be^{at}$                                                          |
+|      $cos(\omega t)$       |                                             $B_1cos(\omega t)+B_2sin(\omega t)$                                             |
+|      $sin(\omega t)$       |                                                             同上                                                              |
+| $$t^pe^{at}cos(\omega t)$$ | $$\begin{aligned}(B_1t^p+...+B_pt+B_{p+1})e^{at}cos(\omega t)+\\(D_1t^p+...+D_pt+D_{p+1})e^{at}sin(\omega t)\end{aligned}$$ |
+|      $sin(\omega t)$       |                                                             同上                                                              |
+
+>例：$$\begin{aligned}
+&对于r\prime\prime(t)+2r\prime(t)+3r(t)=e\prime(t)+e(t),已知e(t)=t^2\\
+&对于e(t)=t^2，有特解函数式r(t)=B_1t^2+B_2t+B_3,也代入等式中，可得\\
+&3B_1t^2+(4B_1+3B_2)t+(2B_1+2B_2+3B_3)=t^2+2t\\
+&进行系数比对:\begin{cases}3B_1=1\\4B_1+3B_2=2\\2B_1+2B_2+3B_3=0\end{cases}\\
+&解得:B_1=\dfrac{1}{3},B_2=\dfrac{2}{9},B_3=-\dfrac{10}{27},所以特解为r_p(t)=\dfrac{1}{3}t^2+\dfrac{2}{9}t-\dfrac{10}{27}
+\end{aligned}$$
+
+齐次解和特解相加，可得方程的完整解
+
+### 借助初始条件求待定系数
+初始条件：满足$r^k(0),k=0,1...n-1$ 的一组条件，即响应函数r(t)由本身到最高阶数-1的，t=0时的值
+
+这里举一个完整的题目为例，描述整个求解过程
+>如图所示电路，已知激励信号 $e(t)=sin(2t)u(t)$ ，初始时刻电容端电压均为0，求输出信号 $v_2(t)$ 的表达式
+
+。">
+<meta property="og:title" content="信号与系统学习笔记——2连续时间系统的时域分析">
+<meta property="og:description" content="# 2.2 微分方程的建立（以RLC电路为例）
+有元件的VI特性：
+![[Excalidraw/Drawing 2025-03-01 13.03.00.excalidraw|800]]
+
+>例：对于如下电路，以 $I_S(t)$ 为激励源，列出 $v(t)$ 的表达式
+![[Excalidraw/Drawing 2025-03-01 13.11.19.excalidraw]]
+根据元件的VI特性，有：$$\begin{aligned}
+&i_R(t)=\dfrac{1}{R}v(t)\qquad i_L(t)=\dfrac{1}{L}\int v(\tau)\mathrm d\tau \qquad i_C(t)=C\dfrac{\mathrm dv(t)}{\mathrm dt}\\
+&可列：I_S(t)=i_R(t)+i_L(t)+i_C(t)→I_S\prime(t)=\dfrac{1}{R}v\prime(t)+\dfrac{1}{L}v(t)+Cv\prime\prime(t)
+\end{aligned}$$
+
+# 2.3用时域经典法求解常系数微分方程
+常系数微分方程（没有常数项！）：$$
+C_0r^n(t)+C_1r^{n-1}(t)+...+C_nr(t)=E_0e^n(t)+E_1e^{n-1}(t)+...+E_ne(t)
+$$
+解由齐次解与特解组成，还需要借助初始条件求出待定系数，具体方法如下：
+
+### 求齐次解
+齐次解是 $e(t)$ 及其各阶导数均为0的情况，即**令微分方程右侧为0**，反映的是不受激励影响的**固有频率** 
+具体求解思路为：列写齐次方程→求解根→线性组合得出齐次解 $r_h(t)=\sum^n_{k=1} A_ke^{kt}$ 
+>这里以微分方程 $r\prime\prime(t)+3r\prime(t)+2r(t)=e(t)$ 为例，阐述求解步骤：$$\begin{aligned}&令右侧为0，可得r\prime\prime(t)+3r\prime(t)+2r(t)=0\\
+&因为涉及到高阶求导，如果所求函数的求导是其本身，会使计算变得简单\\
+&我们猜测r(t)=e^{at},则a^2e^{at}+3ae^{at}+2e^{at}=0，可得a^2+3a+2=0，即为\textbf{齐次方程}\\
+&易得解a_1=-1,a_2=-2,经线性组合可得齐次解r_h(t)=A_1e^{-t}+A_2e^{-2t}
+\end{aligned}$$
+
+若出现n重根，则通过乘 $t^n...t$ 进行区分
+>例：$$\begin{aligned} 
+&对于r\prime\prime\prime(t)+7r\prime\prime(t)+16r\prime(t)+12r(t)=e(t),有齐次方程:\\
+&a^3+7a^2+16a+12=(a+2)(a+2)(a+3)=0,解得根a_1=a_2=-2,a_3=-3\\
+ &则有齐次解r_h(t)=(A_1t+A_2)e^{-2t}+A_3e^{-3t}\\
+ & \\
+ &对于更多重根同理，如三重根可写为(A_1t^2+A_2t+A_3)e^{at}
+\end{aligned}$$
+
+### 求特解
+特解的形式与激励函数形式有关，是激励函数与其各阶导数的线性叠加，反映的是激励影响下的**强迫响应**  
+具体求解思路为：左侧代入特解函数式，右侧代入e(t)的表达式，通过系数比对解出
+若特解与齐次解重复，参考齐次解中n重根的处理方法
+
+|          激励函数e(t)          |                                                         响应函数r(t)的特解                                                         |
+| :------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
+|            常数E             |                                                              B                                                              |
+|           $t^p$            |                                            $B_1t^p+B_2t^{p-1}+...+B_pt+B_{p+1}$                                             |
+|          $e^{at}$          |                                                          $Be^{at}$                                                          |
+|      $cos(\omega t)$       |                                             $B_1cos(\omega t)+B_2sin(\omega t)$                                             |
+|      $sin(\omega t)$       |                                                             同上                                                              |
+| $$t^pe^{at}cos(\omega t)$$ | $$\begin{aligned}(B_1t^p+...+B_pt+B_{p+1})e^{at}cos(\omega t)+\\(D_1t^p+...+D_pt+D_{p+1})e^{at}sin(\omega t)\end{aligned}$$ |
+|      $sin(\omega t)$       |                                                             同上                                                              |
+
+>例：$$\begin{aligned}
+&对于r\prime\prime(t)+2r\prime(t)+3r(t)=e\prime(t)+e(t),已知e(t)=t^2\\
+&对于e(t)=t^2，有特解函数式r(t)=B_1t^2+B_2t+B_3,也代入等式中，可得\\
+&3B_1t^2+(4B_1+3B_2)t+(2B_1+2B_2+3B_3)=t^2+2t\\
+&进行系数比对:\begin{cases}3B_1=1\\4B_1+3B_2=2\\2B_1+2B_2+3B_3=0\end{cases}\\
+&解得:B_1=\dfrac{1}{3},B_2=\dfrac{2}{9},B_3=-\dfrac{10}{27},所以特解为r_p(t)=\dfrac{1}{3}t^2+\dfrac{2}{9}t-\dfrac{10}{27}
+\end{aligned}$$
+
+齐次解和特解相加，可得方程的完整解
+
+### 借助初始条件求待定系数
+初始条件：满足$r^k(0),k=0,1...n-1$ 的一组条件，即响应函数r(t)由本身到最高阶数-1的，t=0时的值
+
+这里举一个完整的题目为例，描述整个求解过程
+>如图所示电路，已知激励信号 $e(t)=sin(2t)u(t)$ ，初始时刻电容端电压均为0，求输出信号 $v_2(t)$ 的表达式
+
+。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%942-lian-xu-shi-jian-xi-tong-de-shi-yu-fen-xi.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>信号与系统学习笔记——2连续时间系统的时域分析</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">信号与系统学习笔记——2连续时间系统的时域分析</h1>
+<div class="title-right">
+    <a href="https://delbacon.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/delbacon/delbacon.github.io/issues/6" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>2.2 微分方程的建立（以RLC电路为例）</h1>
+<p>有元件的VI特性：<br>
+![[Excalidraw/Drawing 2025-03-01 13.03.00.excalidraw|800]]</p>
+<blockquote>
+<p>例：对于如下电路，以 $I_S(t)$ 为激励源，列出 $v(t)$ 的表达式<br>
+![[Excalidraw/Drawing 2025-03-01 13.11.19.excalidraw]]<br>
+根据元件的VI特性，有：$$\begin{aligned}<br>
+&amp;i_R(t)=\dfrac{1}{R}v(t)\qquad i_L(t)=\dfrac{1}{L}\int v(\tau)\mathrm d\tau \qquad i_C(t)=C\dfrac{\mathrm dv(t)}{\mathrm dt}\<br>
+&amp;可列：I_S(t)=i_R(t)+i_L(t)+i_C(t)→I_S\prime(t)=\dfrac{1}{R}v\prime(t)+\dfrac{1}{L}v(t)+Cv\prime\prime(t)<br>
+\end{aligned}$$</p>
+</blockquote>
+<h1>2.3用时域经典法求解常系数微分方程</h1>
+<p>常系数微分方程（没有常数项！）：$$<br>
+C_0r^n(t)+C_1r^{n-1}(t)+...+C_nr(t)=E_0e^n(t)+E_1e^{n-1}(t)+...+E_ne(t)<br>
+$$<br>
+解由齐次解与特解组成，还需要借助初始条件求出待定系数，具体方法如下：</p>
+<h3>求齐次解</h3>
+<p>齐次解是 $e(t)$ 及其各阶导数均为0的情况，即<strong>令微分方程右侧为0</strong>，反映的是不受激励影响的<strong>固有频率</strong><br>
+具体求解思路为：列写齐次方程→求解根→线性组合得出齐次解 $r_h(t)=\sum^n_{k=1} A_ke^{kt}$</p>
+<blockquote>
+<p>这里以微分方程 $r\prime\prime(t)+3r\prime(t)+2r(t)=e(t)$ 为例，阐述求解步骤：$$\begin{aligned}&amp;令右侧为0，可得r\prime\prime(t)+3r\prime(t)+2r(t)=0\<br>
+&amp;因为涉及到高阶求导，如果所求函数的求导是其本身，会使计算变得简单\<br>
+&amp;我们猜测r(t)=e^{at},则a^2e^{at}+3ae^{at}+2e^{at}=0，可得a^2+3a+2=0，即为\textbf{齐次方程}\<br>
+&amp;易得解a_1=-1,a_2=-2,经线性组合可得齐次解r_h(t)=A_1e^{-t}+A_2e^{-2t}<br>
+\end{aligned}$$</p>
+</blockquote>
+<p>若出现n重根，则通过乘 $t^n...t$ 进行区分</p>
+<blockquote>
+<p>例：$$\begin{aligned}<br>
+&amp;对于r\prime\prime\prime(t)+7r\prime\prime(t)+16r\prime(t)+12r(t)=e(t),有齐次方程:\<br>
+&amp;a^3+7a^2+16a+12=(a+2)(a+2)(a+3)=0,解得根a_1=a_2=-2,a_3=-3\<br>
+&amp;则有齐次解r_h(t)=(A_1t+A_2)e^{-2t}+A_3e^{-3t}\<br>
+&amp; \<br>
+&amp;对于更多重根同理，如三重根可写为(A_1t^2+A_2t+A_3)e^{at}<br>
+\end{aligned}$$</p>
+</blockquote>
+<h3>求特解</h3>
+<p>特解的形式与激励函数形式有关，是激励函数与其各阶导数的线性叠加，反映的是激励影响下的<strong>强迫响应</strong><br>
+具体求解思路为：左侧代入特解函数式，右侧代入e(t)的表达式，通过系数比对解出<br>
+若特解与齐次解重复，参考齐次解中n重根的处理方法</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">激励函数e(t)</th>
+<th align="center">响应函数r(t)的特解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">常数E</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">$t^p$</td>
+<td align="center">$B_1t^p+B_2t^{p-1}+...+B_pt+B_{p+1}$</td>
+</tr>
+<tr>
+<td align="center">$e^{at}$</td>
+<td align="center">$Be^{at}$</td>
+</tr>
+<tr>
+<td align="center">$cos(\omega t)$</td>
+<td align="center">$B_1cos(\omega t)+B_2sin(\omega t)$</td>
+</tr>
+<tr>
+<td align="center">$sin(\omega t)$</td>
+<td align="center">同上</td>
+</tr>
+<tr>
+<td align="center">$$t^pe^{at}cos(\omega t)$$</td>
+<td align="center">$$\begin{aligned}(B_1t^p+...+B_pt+B_{p+1})e^{at}cos(\omega t)+\(D_1t^p+...+D_pt+D_{p+1})e^{at}sin(\omega t)\end{aligned}$$</td>
+</tr>
+<tr>
+<td align="center">$sin(\omega t)$</td>
+<td align="center">同上</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p>例：$$\begin{aligned}<br>
+&amp;对于r\prime\prime(t)+2r\prime(t)+3r(t)=e\prime(t)+e(t),已知e(t)=t^2\<br>
+&amp;对于e(t)=t^2，有特解函数式r(t)=B_1t^2+B_2t+B_3,也代入等式中，可得\<br>
+&amp;3B_1t^2+(4B_1+3B_2)t+(2B_1+2B_2+3B_3)=t^2+2t\<br>
+&amp;进行系数比对:\begin{cases}3B_1=1\4B_1+3B_2=2\2B_1+2B_2+3B_3=0\end{cases}\<br>
+&amp;解得:B_1=\dfrac{1}{3},B_2=\dfrac{2}{9},B_3=-\dfrac{10}{27},所以特解为r_p(t)=\dfrac{1}{3}t^2+\dfrac{2}{9}t-\dfrac{10}{27}<br>
+\end{aligned}$$</p>
+</blockquote>
+<p>齐次解和特解相加，可得方程的完整解</p>
+<h3>借助初始条件求待定系数</h3>
+<p>初始条件：满足$r^k(0),k=0,1...n-1$ 的一组条件，即响应函数r(t)由本身到最高阶数-1的，t=0时的值</p>
+<p>这里举一个完整的题目为例，描述整个求解过程</p>
+<blockquote>
+<p>如图所示电路，已知激励信号 $e(t)=sin(2t)u(t)$ ，初始时刻电容端电压均为0，求输出信号 $v_2(t)$ 的表达式</p>
+</blockquote></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://delbacon.github.io">delbacon的小窝</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("02/04/2025"!=""){
+    var startSite=new Date("02/04/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","delbacon/delbacon.github.io");
+    script.setAttribute("issue-term","title");
+    
+    script.setAttribute("theme","dark-blue");
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
