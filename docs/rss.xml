@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Mon, 03 Mar 2025 13:16:32 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>信号与系统学习笔记——2连续时间系统的时域分析</title><link>https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%942-lian-xu-shi-jian-xi-tong-de-shi-yu-fen-xi.html</link><description># 2.2 微分方程的建立（以RLC电路为例）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>delbacon的小窝</title><link>https://delbacon.github.io</link><description>芙兰大学本科在读，电子科学与技术专业，分享学习经历与日常</description><copyright>delbacon的小窝</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://delbacon.github.io</link></image><lastBuildDate>Mon, 03 Mar 2025 13:17:29 +0000</lastBuildDate><managingEditor>delbacon的小窝</managingEditor><ttl>60</ttl><webMaster>delbacon的小窝</webMaster><item><title>信号与系统学习笔记——2连续时间系统的时域分析</title><link>https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%942-lian-xu-shi-jian-xi-tong-de-shi-yu-fen-xi.html</link><description># 2.2 微分方程的建立（以RLC电路为例）
 有元件的VI特性：
 ![[Excalidraw/Drawing 2025-03-01 13.03.00.excalidraw|800]]
 
@@ -64,7 +64,7 @@ $$
 
 这里举一个完整的题目为例，描述整个求解过程
 &gt;如图所示电路，已知激励信号 $e(t)=sin(2t)u(t)$ ，初始时刻电容端电压均为0，求输出信号 $v_2(t)$ 的表达式
-
+&lt;!-- ##{'timestamp':1740834990}## --&gt;
 。</description><guid isPermaLink="true">https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%942-lian-xu-shi-jian-xi-tong-de-shi-yu-fen-xi.html</guid><pubDate>Mon, 03 Mar 2025 13:16:06 +0000</pubDate></item><item><title>信号与系统学习笔记——1绪论</title><link>https://delbacon.github.io/post/xin-hao-yu-xi-tong-xue-xi-bi-ji-%E2%80%94%E2%80%941-xu-lun.html</link><description>#信号与系统 #信号与系统/信号
 信号：输入输出
 系统：处理与响应部分
